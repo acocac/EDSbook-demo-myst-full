@@ -1,0 +1,35 @@
+description: Cloud-stored paper input data from https://doi.org/10.5281/zenodo.7919172
+plugins:
+  source:
+    - module: intake_xarray
+sources:
+  MITGCM_model:
+    args:
+      consolidated: true
+      storage_options:
+        s3:
+          anon: true
+          client_kwargs: {endpoint_url: 'https://pangeo-eosc-minioapi.vm.fedcloud.eu/'}
+      urlpath: simplecache::s3://afouilloux-dsbook-data/cat_tave_fig1a_1f_1800.zarr
+    description: MITGCM model
+    driver: intake_xarray.xzarr.ZarrSource
+  density_data:
+    args:
+      consolidated: true
+      storage_options:
+        s3:
+          anon: true
+          client_kwargs: {endpoint_url: 'https://pangeo-eosc-minioapi.vm.fedcloud.eu/'}
+      urlpath: simplecache::s3://acocacastro-edsbook-data/team3/input/original/DensityData_1800.zarr
+    description: Density data
+    driver: intake_xarray.xzarr.ZarrSource
+  clim_data:
+    args:
+      storage_options:
+        s3:
+          anon: true
+          client_kwargs: {endpoint_url: 'https://pangeo-eosc-minioapi.vm.fedcloud.eu/'}
+      urlpath: simplecache::s3://acocacastro-edsbook-data/team3/input/original/ncra_cat_tave.nc
+    description: Density data
+    driver: netcdf
+
