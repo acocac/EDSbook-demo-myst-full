@@ -1,14 +1,17 @@
-name: lapalma-earthquakes
+name: 3286b92f-4fae-4cc6-a29e-e408bc844542
 channels:
-  - conda-forge
-  - default
+ - conda-forge
 dependencies:
-  - numpy
+  - python=3.10
+  - xarray
   - matplotlib
-  - pandas
-  - scipy
-  - seaborn
-  - altair
-  - plotly
+  - scikit-learn
+  - scikit-image
+  - intake
+  - intake-xarray
+  - netcdf4
+  - h5netcdf
+  - s3fs
+  - zenodo_get
   - jupyterlab>=4.0.0
   - jupyterlab-myst>=2.0.0
