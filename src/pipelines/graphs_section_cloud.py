@@ -4,7 +4,7 @@ multiple cross sections
 """
 import os
 import sys
-sys.path.append('src')
+sys.path.append('.././src')
 
 import general.plotting as rfplt
 import numpy as np
@@ -23,7 +23,7 @@ def load_data(
     
     print('Reading in MITGCM dataset ...')
 
-    cat = intake.open_catalog('data/inputs_paper.yml')
+    cat = intake.open_catalog('.././data/inputs_paper.yml')
 
     da = cat.MITGCM_model.to_dask()
 
