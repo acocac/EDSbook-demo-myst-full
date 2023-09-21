@@ -1,77 +1,111 @@
 # See docs at: https://mystmd.org/guide/frontmatter
 version: 1
 project:
-  title: La Palma Seismicity 2021
-  subtitle: An analysis of earthquake swarms in relation to the 2021 eruption
+  title: Learning the underlying physics of a simulation model of the ocean's temperature
+  subtitle: Computational Reproduction of "A Sensitivity Analysis of a Regression Model of Ocean Temperature"
   authors:
-    - id: spurves
-      name: Steve Purves
-      orcid: 0000-0002-0760-5497
+    - id: gmalhotra
+      name: Garima Malhotra
+      orcid: 0000-0003-4179-628X
       corresponding: true
-      email: steve@curvenote.com
+      #email: steve@curvenote.com
       roles:
-        - Investigation
-        - Project administration
         - Software
         - Visualization
       affiliations:
-        - curvenote
-    - id: rcockett
-      name: Rowan Cockett
-      orcid: 0000-0002-7859-8394
+        - colorado
+    - id: dpinto
+      name: Daniela Pinto Veizaga
+      orcid: 0009-0005-8588-3774
       corresponding: false
-      role: Project administration
+      roles:
+        - Software
+        - Visualization
       affiliations:
-        - curvenote
+        - berkeley
+    - id: jpena
+      name: Jorge Eduardo Peña Velasco
+      orcid: 0000-0002-8364-2492
+      corresponding: false
+      roles:
+        - Software
+        - Visualization
+      affiliations:
+        - claremont
   affiliations:
-    - id: curvenote
-      name: Curvenote
-      department: Engineering Team
-      address: 123 Main St.
-      city: NYC
-      state: New York
-      postal_code: '10001'
+    - id: colorado
+      name: University of Colorado Boulder
+      department: Cooperative Institute for Research in Environmental Sciences
+      address: 216 UCB
+      city: Boulder
+      state: CO
+      postal_code: '80309'
       country: USA
-      isni: '0000000000000000'
-      url: https://curvenote.com
-      email: support@curvenote.com
-      phone: 123-456-7890
-      fax: 123-456-7891
-  github: https://github.com/stevejpurves/ign-earthquake-data
+      #isni: '0000000000000000'
+      url: https://cires.colorado.edu/
+      email: ciresmc@colorado.edu
+      phone: 303-492-1143
+      #fax: 123-456-7891
+    - id: berkeley
+      name: University of California Berkeley
+      department: Center for Effective Global Action
+      address: 207 Giannini Hall
+      city: Berkeley
+      state: CA
+      postal_code: '94720'
+      country: USA
+      #isni: '0000000000000000'
+      url: https://cega.berkeley.edu/
+      email: cega@berkeley.edu
+      phone: 510-642-4361
+      fax: 510-643-8911
+    - id: claremont
+      name: Claremont McKenna College
+      #department: Center for Effective Global Action
+      address: 888 N Columbia Ave
+      city: Claremont
+      state: CA
+      postal_code: '91711'
+      country: USA
+      #isni: '0000000000000000'
+      url: https://cega.berkeley.edu/
+      #email: cega@berkeley.edu
+      phone: 909-621-8000
+      #fax: 510-643-8911
+  github: https://github.com/acocac/EDSbook-demo-myst
   binder: >-
-    https://mybinder.org/v2/gh/Notebooks-Now/submission-myst-full/HEAD?labpath=la-palma-visualization.ipynb
+    https://mybinder.org/v2/gh/acocac/EDSbook-demo-myst/HEAD?labpath=notebooks/figure-1.ipynb
   open_access: true
   license:
     content: CC-BY-SA-4.0
     code: MIT
   funding:
-    - statement: This work was supported by Notebooks Now! at AGU.
-      open_access: Users are allowed to read, download, copy, distribute, print, search, or link to this template, or use it for any other lawful purpose, without asking prior permission
-      id: agu-0000
+    - statement: This work was supported by Climate Informatics Reproducibility Challenge 2023 using Notebooks Now! at AGU.
+      open_access: Users are allowed to read, download, copy, distribute, print, search, or link to this article, or use it for any other lawful purpose, without asking prior permission
+      id: ci-0000
       sources:
-        - id: agu
-          name: American Geophysical Union
+        - id: ci
+          name: Climate Informatics
       investigators:
-        - spurves
+        - gmalhotra
         - rcockett
+        - jpena
       recipients:
-        - name: Franklin Koch
+        - name: Alejandro Coca-Castro
           affiliations:
-            - curvenote
+            - EDS book community
   subject: Original Submission
   venue:
-    title: Notebooks Now!
-    url: https://data.agu.org/notebooks-now/
+    title: EDS book
+    url: https://edsbook.org
   keywords:
     - La Palma
     - Earthquakes
-  date: 2022-05-11
+  date: 2023-09-04
   requirements:
     - environment.yml
   resources:
     - README.md
-    - data/catalogoComunSV_1663233588717.csv
-    - data/lapalma_ign.csv
   banner: ./images/banner.png
   exports:
     - format: meca
@@ -80,9 +114,7 @@ project:
     - format: jats
       article: article.md
       sub_articles:
-        - notebooks/seismic-monitoring.md
-        - notebooks/data-screening.ipynb
-        - notebooks/visualization-figure-creation-seaborn.ipynb
+        - notebooks/figure-1.ipynb
     - format: pdf
       article: article.md
       output: article.pdf
@@ -91,15 +123,15 @@ project:
       keypoint_1: You may specify 1 to 3 keypoints for this PDF template
       keypoint_2: These keypoints are complete sentences and less than or equal to 140 characters
       keypoint_3: They are specific to this PDF template, so they will not appear in other exports
-      journal_name: Notebooks Now!
+      journal_name: EDS book
       draft: false
 site:
-  title: La Palma Seismicity 2021
-  logo_text: La Palma Seismicity 2021
+  title: Learning the underlying physics of a simulation model of the ocean's temperature
+  logo_text: Learning the underlying physics of a simulation model of the ocean's temperature
   nav:
     - title: MyST Docs
       url: https://mystmd.org/guide
   actions:
-    - title: Notebooks Now!
-      url: https://data.agu.org/notebooks-now/
+    - title: EDS book
+      url: https://edsbook.org
   template: article-theme
