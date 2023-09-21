@@ -4,4 +4,6 @@
 format: jb-book
 root: article
 chapters:
-  - file: notebooks/figure-1
+  - file: notebooks/ocean-dynamics
+  - file: notebooks/perfomance-regressor
+  - file: notebooks/sensitivity-analysis
