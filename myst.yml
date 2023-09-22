@@ -72,7 +72,7 @@ project:
       #email: cega@berkeley.edu
       phone: 909-621-8000
       #fax: 510-643-8911
-  github: https://github.com/acocac/EDSbook-demo-myst
+  github: https://github.com/acocac/EDSbook-demo-myst-full
   binder: >-
     https://mybinder.org/v2/gh/acocac/EDSbook-demo-myst/HEAD?labpath=notebooks/figure-1.ipynb
   open_access: true
@@ -80,24 +80,27 @@ project:
     content: CC-BY-SA-4.0
     code: MIT
   funding:
-    - statement: This work was supported by Climate Informatics Reproducibility Challenge 2023 using Notebooks Now! templates at AGU.
-      open_access: Users are allowed to read, download, copy, distribute, print, search, or link to this article, or use it for any other lawful purpose, without asking prior permission
-      id: ci-0000
+    - statement: This work was supported by Notebooks Now! at AGU.
+      open_access: Users are allowed to read, download, copy, distribute, print, search, or link to this template, or use it for any other lawful purpose, without asking prior permission
+      id: agu-0000
       sources:
-        - id: ci
-          name: Climate Informatics
+        - id: agu
+          name: American Geophysical Union
       investigators:
-        - gmalhotra
-        - dpinto
-        - jpena
-      recipients:
-        - name: Alejandro Coca-Castro
+        - name: Steve Purves
           affiliations:
-            - EDS book community
-  subject: Special Issue
+            - curvenote
+        - name: Rowan Cockett
+          affiliations:
+            - curvenote
+      recipients:
+        - name: Franklin Koch
+          affiliations:
+            - curvenote
+  subject: Original Submission
   venue:
-    title: EDS book
-    url: https://edsbook.org
+    title: Notebooks Now!
+    url: https://data.agu.org/notebooks-now/
   keywords:
     - Oceanography
     - Interpretable ML
@@ -126,15 +129,15 @@ project:
       keypoint_1: You may specify 1 to 3 keypoints for this PDF template
       keypoint_2: These keypoints are complete sentences and less than or equal to 140 characters
       keypoint_3: They are specific to this PDF template, so they will not appear in other exports
-      journal_name: EDS book
+      journal_name: Notebooks Now!
       draft: false
 site:
   title: Learning the underlying physics of a simulation model of the ocean's temperature
-  logo_text: EDS book Special Issue (Climate Informatics Reproducibility Challenge 2023)
+  logo_text: Learning the underlying physics of a simulation model of the ocean's temperature
   nav:
     - title: MyST Docs
       url: https://mystmd.org/guide
   actions:
-    - title: EDS book
-      url: https://edsbook.org
+    - title: Notebooks Now!
+      url: https://data.agu.org/notebooks-now/
   template: article-theme
