@@ -114,7 +114,9 @@ project:
     - format: jats
       article: article.md
       sub_articles:
-        - notebooks/figure-1.ipynb
+        - notebooks/ocean-dynamics.ipynb
+        - notebooks/perfomance-regressor.ipynb
+        - notebooks/sensitivity-analysis.ipynb
     - format: pdf
       article: article.md
       output: article.pdf
