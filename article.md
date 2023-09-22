@@ -92,7 +92,7 @@ Importantly, note from the figures presented, that the depth axis is scaled to g
 
 ## Performance of the regressor
 
-### Scatter plot for the control regressor ([Figure %s](#fig-2)) - Different from above
+### Scatter plot for the control regressor ([Figure %s](#fig-2))
 
 The model captures the central part of the distribution well. While the majority of the temperature change is dominated by small near-zero changes, capturing these is key to producing a good forecast system. To a lesser extent, the regressor also captures the tails of the distribution, where temperature changes are larger, although the underprediction is more significant here. However, it is noteworthy that the model still shows some skill for these points, given that the model used is very simple and there are a relatively limited number of training samples in the tails.
 
