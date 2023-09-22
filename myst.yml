@@ -130,7 +130,7 @@ project:
       draft: false
 site:
   title: Learning the underlying physics of a simulation model of the ocean's temperature
-  logo_text: Learning the underlying physics of a simulation model of the ocean's temperature
+  logo_text: EDS book Special Issue (Climate Informatics Reproducibility Challenge 2023)
   nav:
     - title: MyST Docs
       url: https://mystmd.org/guide

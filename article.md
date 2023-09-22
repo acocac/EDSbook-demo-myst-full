@@ -8,7 +8,7 @@ tags:
   - oceanography
   - interpretable-ML
   - model-sensitivity
-thumbnail: images/la-palma-eruption-2022-paper.png
+thumbnail: images/thumbnail.png
 ---
 
 +++ {"part":"abstract"}
