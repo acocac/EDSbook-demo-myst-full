@@ -1,0 +1,30 @@
+description: Cloud-stored models training data from https://doi.org/10.5281/zenodo.7954232
+plugins:
+  source:
+    - module: intake_xarray
+sources:
+  alpha.001_3dLatLonDepUVBolSalEtaDnsPolyDeg2_Step1_PredictDelT:
+    args:
+      consolidated: false
+      storage_options:
+        s3:
+          anon: true
+          client_kwargs: {endpoint_url: 'https://pangeo-eosc-minioapi.vm.fedcloud.eu/'}
+      urlpath: simplecache::s3://acocacastro-edsbook-data/team3/data/processed/alpha.001_3dLatLonDepUVBolSalEtaDnsPolyDeg2_Step1_PredictDelT_rechunked_2G.zarr
+    description: input data model
+    driver: intake_xarray.xzarr.ZarrSource
+  alpha.001_3dLatLonDepUVBolSalEtaDnsPolyDeg1_Step1_PredictDelT:
+    parameters:
+      partition:
+        type: str
+        description: partition
+        default: Tr
+    args:
+      consolidated: false
+      storage_options:
+        s3:
+          anon: true
+          client_kwargs: {endpoint_url: 'https://pangeo-eosc-minioapi.vm.fedcloud.eu/'}
+      urlpath: simplecache::s3://acocacastro-edsbook-data/team3/data/processed/SinglePoint_3dLatLonDepUVBolSalEtaDnsPolyDeg1_Step1_PredictDelT_Inputs{{partition}}_rechunk.zarr
+    description: input data model
+    driver: intake_xarray.xzarr.ZarrSource
