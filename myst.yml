@@ -99,8 +99,9 @@ project:
     title: EDS book
     url: https://edsbook.org
   keywords:
-    - La Palma
-    - Earthquakes
+    - Oceanography
+    - Interpretable ML
+    - Model Sensitivity
   date: 2023-09-04
   requirements:
     - environment.yml
