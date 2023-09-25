@@ -1,4 +1,4 @@
-# Notebooks Now! Submission Template
+# Notebooks Now! Submission Template - EDS book (CICR23) 
 
 [![Made with MyST](https://img.shields.io/badge/made%20with-myst-orange)](https://mystmd.org)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Notebooks-Now/submission-myst-full/HEAD?labpath=notebooks/data-screening.ipynb)
