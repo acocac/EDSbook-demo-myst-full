@@ -20,17 +20,17 @@ Can data-driven models for weather and climate predictions learn the underlying 
 
 +++
 
-# Introduction
+## Introduction
 
-## Purpose
+### Purpose
 
 The article aims to complement the science and methodological development embedded within the original paper, using an open infrastructure that allows users to combine interactive code with text and graphical objects, translating research outputs into findable, accessible, interoperable and reusable outputs and code.
 
-## Description
+### Description
 
 The notebook demonstrates the inputs, the training of the regression model of ocean temperature and its sensitivity analysis.
 
-## Highlights
+### Highlights
 
 * Load the necessary libraries and dependencies to run this notebook, i.e., numpy, xarray, etc.
 * Fetch the original dataset used for training the regression models.
@@ -42,7 +42,7 @@ The notebook demonstrates the inputs, the training of the regression model of oc
 * Summarize our findings.
 * Provide contact information.
 
-# Dataset
+## Dataset
 
 The training and validation data derive from running the Massachusetts Institute of Technology general circulation model ([MITgcm](https://zenodo.org/record/4672260#.ZFgb_S-B2pY)) —a physically based model capable of simulating the ocean or the atmosphere dynamics due to isomorphisms in the governing equations. This research project relies on a simple 2° sector configuration that captures the fundamental dynamics of the ocean, including a realistic overturning circulation. This configuration features a single ocean basin, with:
 + limited topography
@@ -57,9 +57,9 @@ The simulator has:
 
 The simulator has a 12-hr time step, with fields output daily. We focus on daily-mean outputs.
 
-# Results
+## Results
 
-## Ocean dynamics ([Figure %s](#fig-1))
+### Ocean dynamics ([Figure %s](#fig-1))
 
 The paper uses a  2° sector configuration to simulate ocean dynamics. This configuration features a single ocean basin, with limited topography, simplified coastlines, and constant idealized forcing. This has been used in a number of idealized simulations of Southern Ocean processes and their impacts on the global circulation. This configuration, while relatively simple, captures the fundamental dynamics of the ocean, including a realistic overturning circulation.
 
@@ -90,9 +90,9 @@ Notice that the domain:
 
 Importantly, note from the figures presented, that the depth axis is scaled to give each GCM grid cell equal spacing. The simulator shows a realistic temperature distribution with warm surface water near the equator, and cooler water near the poles and in the deep ocean. Temperature changes are largest in the very north of the domain and throughout the southern region. Though changes per day are small, they accumulate over time to give cycles of around 0.2° in some regions of the domain.
 
-## Performance of the regressor
+### Performance of the regressor
 
-### Scatter plot for the control regressor ([Figure %s](#fig-2))
+#### Scatter plot for the control regressor ([Figure %s](#fig-2))
 
 The model captures the central part of the distribution well. While the majority of the temperature change is dominated by small near-zero changes, capturing these is key to producing a good forecast system. To a lesser extent, the regressor also captures the tails of the distribution, where temperature changes are larger, although the underprediction is more significant here. However, it is noteworthy that the model still shows some skill for these points, given that the model used is very simple and there are a relatively limited number of training samples in the tails.
 
@@ -105,7 +105,7 @@ The model captures the central part of the distribution well. While the majority
 Computational reproduction of Figure 2.
 ```
 
-### Spatial patterns of errors ([Figure %s](#fig-3))
+#### Spatial patterns of errors ([Figure %s](#fig-3))
 
 The regressor shows the largest errors are located in the north of the domain and in the Southern Ocean. We see that the errors in the north of the domain are co-located with regions of high vertical advective temperature fluxes, and regions of high convective fluxes. These results imply the regression model struggles to fully capture the vertical processes, and the associated heat flux, in the north of the domain. The high errors in the Southern Ocean are again co-located with regions of high vertical diffusive fluxes, this time both explicit and implicit, and vertical advection.  Throughout the ocean interior where temperature changes and the fluxes associated with these are small, errors are also small as would be expected.
 
@@ -115,9 +115,9 @@ The regressor shows the largest errors are located in the north of the domain an
 Computational reproduction of Figure 3.
 ```
 
-## Sensitivity analysis
+### Sensitivity analysis
 
-### Coefficient analysis ([Figure %s](#fig-4))
+#### Coefficient analysis ([Figure %s](#fig-4))
 
 High-weighted inputs (those with a large magnitude coefficient) are variables which are heavily used in the predictions and therefore considered important for the predictive skill. From the above figures we infer: 
 
@@ -133,10 +133,10 @@ High-weighted inputs (those with a large magnitude coefficient) are variables wh
 Computational reproduction of Figure 4.
 ```
 
-### Witholding experiments
+#### Witholding experiments
 In this section, we run a series of withholding experiments. For each of the variables described with the exception of temperature, we train a new regressor leaving out that one variable group, for example, we train a new regressor with all the existing inputs except for salinity at all surrounding points and any multiplicative terms including salinity.
 
-#### Withholding multiplicative terms: ([Figure %s](#fig-5)); Importance of Non-Linearity
+##### Withholding multiplicative terms: ([Figure %s](#fig-5)); Importance of Non-Linearity
 
 ```{figure} #figure-5
 :name: fig-5
@@ -146,7 +146,7 @@ Computational reproduction of Figure 5.
 
 We see that, without multiplicative terms, the model can capture the mean behavior of the system (zero change in temperature) but is unable to capture any of the variability. This mean behavior alone does not provide useful forecasts, as can be seen from the statistics for this experiment. Nonlinearity is shown to be critical to modeling the variability of temperature change.
 
-#### Withholding 3D structure: ([Figure %s](#fig-6)); Impact of vertical structure
+##### Withholding 3D structure: ([Figure %s](#fig-6)); Impact of vertical structure
 
 ```{figure} #figure-6
 :name: fig-6
@@ -156,7 +156,7 @@ Computational reproduction of Figure 6.
 
 The horizontal (U and V) components of the currents directly drive horizontal advection of temperature. They are also indirectly related to horizontal diffusion, as this is increased in regions of high currents and steep gradients. As such, we would expect that suppressing information about the horizontal currents would cause increases in error in regions where horizontal advection and horizontal diffusion is high. However, again, we note that this region of increased error is one where many processes are present, and the increased errors seen also coincide, to a lesser extent, with regions of high vertical processes (advection, diffusion, and convection), which is less in line with our physical understanding. Here, errors appear more closely matched to the horizontal processes, and so a reasonable interpretation is that the model here is behaving as expected.
 
-# Conclusions
+## Conclusions
 
 * There has been much recent interest in developing data-driven models for weather and climate predictions. However, there are open questions regarding their generalizability and robustness, highlighting a need to better understand how they make their predictions. In particular, it is important to understand whether data-driven models learn the underlying physics of the system against which they are trained, or simply identify statistical patterns without any clear link to the underlying physics. 
 * In this notebook, we run a sensitivity analysis of a regression-based model of ocean temperature, trained against simulations from a 3D ocean model setup in a very simple configuration. 
