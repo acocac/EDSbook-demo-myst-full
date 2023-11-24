@@ -109,6 +109,7 @@ project:
     - environment.yml
   resources:
     - README.md
+    - src/*
   banner: ./images/banner.png
   exports:
     - format: meca
