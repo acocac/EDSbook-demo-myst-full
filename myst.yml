@@ -109,7 +109,7 @@ project:
     - environment.yml
   resources:
     - README.md
-    - src/*
+    - data/*
     - src/**/*
   banner: ./images/banner.png
   exports:
