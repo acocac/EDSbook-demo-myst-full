@@ -110,6 +110,7 @@ project:
   resources:
     - README.md
     - src/*
+    - src/**/*
   banner: ./images/banner.png
   exports:
     - format: meca
